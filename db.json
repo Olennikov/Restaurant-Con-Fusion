@@ -44,6 +44,12 @@
           "rating": 1,
           "comment": "I eat kosher only!",
           "date": "2016-03-13T01:22:37.001Z"
+        },
+        {
+          "author": "Ivan",
+          "rating": 5,
+          "comment": "Very Good",
+          "date": "2016-03-16T12:58:02.863Z"
         }
       ]
     },
@@ -252,6 +258,18 @@
       },
       "comments": "Why you r serving us fried cats??? I'll say on you to Animal Care!",
       "id": 2
+    },
+    {
+      "mychannel": "Telephone",
+      "firstName": "Ivan",
+      "lastName": "The Terrible",
+      "agree": true,
+      "email": "ivan@gmail.com",
+      "tel": {
+        "number": "058745123"
+      },
+      "comments": "Your place is grose!!",
+      "id": 3
     }
   ]
 }
