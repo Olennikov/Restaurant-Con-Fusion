@@ -1,0 +1,81 @@
+<!-- COMMENTS SECTOR -->
+<div class="container">
+<div class="row row-content" ng-controller="DishDetailController">
+  <div class="col-xs-12" ng-if="!showDish">
+    <h3>{{message}}</h3>
+  </div>
+  <div class="col-xs-12" ng-if="showDish">
+      <button class="btn btn-xs btn-primary pull-right"
+          type="button" ui-sref="app.menu">
+          Back to Menu
+      </button>
+      <div class="media">
+        <div class="media-left media-middle">
+            <a href="#">
+              <img class="media-object img-thumbnail" ng-src={{dish.image}} alt="Uthappizza">
+          </a>
+        </div>
+        <div class="media-body">
+          <h2 class="media-heading">{{dish.name}}
+            <span class="label label-danger">{{dish.label}}</span>
+            <span class="badge">{{dish.price | currency}}</span>
+          </h2>
+          <p>{{dish.description}}</p>
+        </div>
+      </div>
+  </div>
+
+  <!-- COMMENTS -->
+  <div class="col-xs-8">
+    <blockquote ng-repeat="comment in dish.comments | limitTo:rowLimit | orderBy : orderComm">
+      <h3> <small>{{comment.rating}} Stars</small></h3>
+      <p>{{comment.comment}}</p>
+      <footer>{{comment.author}}
+        <cite title="Source Title">{{comment.date| date:"MM/dd/yyyy 'at' h:mma"}}</cite>
+      </footer>
+    </blockquote>
+  </div>
+
+  <div class="col-xs-4">
+    Messages to show:
+    <input type="number" step="1" min="1" ng-model="rowLimit">
+    Sort By:
+    <select ng-model="orderComm">
+      <option value="author" active="true">Name Asc</option>
+      <option value="-author">Name Desc</option>
+      <option value="date">Date Asc</option>
+      <option value="-date">Date Desc</option>
+      <option value="rating">Rating</option>
+      <option value="-rating">Rating Desc</option>
+    </select>
+  </div>
+
+  <div class="row row-content" ng-controller="DishCommentController">
+    <form class="form-horizontal" role="form" name="commentForm" novalidate>
+      <!-- AUTHORNAME -->
+      <div ng-class="{'has-error': commentForm.authorName.$error.required && commentForm.authorName.$dirty}">
+        <label for="authorName" class="col-sm-2 control-label">Your Name</label>
+          <input type="text" id="authorName" name="authorName" placeholder="Enter First Name" ng-model="comment.author" required>
+          <span ng-show="commentForm.authorName.$error.required && commentForm.authorName.$dirty" class="help-block">Your name is required.</span>
+      </div>
+    </br>
+
+    <!-- AUTHOR_RATING -->
+    Your score:
+    <input type="radio" ng-model="comment.rating" value="1">1
+    <input type="radio" ng-model="comment.rating" value="2">2
+    <input type="radio" ng-model="comment.rating" value="3">3
+    <input type="radio" ng-model="comment.rating" value="4">4
+    <input type="radio" ng-model="comment.rating" value="5" ng-checked="true">5
+
+    <div ng-class="{'has-error': commentForm.comText.$error.required && commentForm.comText.$dirty}">
+    <label for="comText" class="col-sm-2 control-label">Comment:</label>
+    <textarea rows="12" id="comText" name="comText" ng-model="comment.comment" required></textarea>
+    <span ng-show="commentForm.comText.$error.required && commentForm.comText.$dirty" class="help-block">Comment is required.</span>
+   </div>
+    <button type="submit" name="button" class="btn btn-sm btn-info" ng-click="addComment()">Add Comment</button>
+  </form>
+</div>
+</div>
+</div>
+<!-- ADD_COMMENT_SECTION -->

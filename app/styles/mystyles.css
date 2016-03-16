@@ -1,0 +1,114 @@
+.row-header {
+  margin: 0px auto;
+  padding: 0px 0px;
+}
+.row-content {
+  margin: 0px auto;
+  padding: 50px 0px;
+  /*border-bottom: 1px ridge;*/
+  min-height: 400px;
+}
+.row-footer {
+  margin: 0px auto;
+  padding: 20px 0px;
+  background-color: #AfAfAf;
+}
+.img_wrap {
+    position: relative;
+}
+.img_wrap > .img_darker{
+    background-color: black;
+}
+#header_img{
+  width: 1980px;
+  height: 700px;
+  min-width: 1260px;
+  opacity:0.5;
+}
+.inside_img {
+	position: absolute;
+  text-align: center;
+  
+}
+.explain{
+  font-size: 80px;
+  margin-top:170px;
+  font-weight: 700;
+  color: white;
+
+}
+
+.inside_img > .first_p{
+  font-size: 26px;
+  margin-top:50px;
+  color: white;
+
+}
+.inside_img > .no_p{
+  font-size: 26px;
+  margin-top:10px;
+  color: white;
+}
+.navbar-inverse {
+  background: #13162e;
+  color: #ffffff;
+}
+.navbar-inverse .navbar-nav > .active > a {
+  background: #13162e;
+  color: #ffffff;
+}
+.navbar-inverse .navbar-nav > .active > a:hover {
+  background: #13162e;
+  color: #ffffff;
+}
+.navbar-inverse .navbar-nav > .active > a:focus {
+  background: #13162e;
+  color: #ffffff;
+}
+.navbar-inverse .navbar-nav > .open > a {
+  background: #13162e;
+  color: #ffffff;
+}
+.navbar-inverse .navbar-nav > .open > a:hover {
+  background: #13162e;
+  color: #ffffff;
+}
+.navbar-inverse .navbar-nav > .open > a:focus {
+  background: #13162e;
+  color: #ffffff;
+}
+.navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
+  background-color: #303f9f;
+  color: #eeeeee;
+}
+.navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover {
+  color: #000000;
+}
+.navbar-inverse .navbar-nav .open .dropdown-menu {
+  background-color: #303f9f;
+  color: #eeeeee;
+}
+address {
+  color: #0f0f0f;
+  font-size: 80%;
+  margin: 0px;
+}
+body {
+  align: center;
+  padding: 50px 0px 0px 0px;
+  z-index: 0;
+}
+.tab-content {
+  border-bottom: 1px solid #dddddd;
+  border-left: 1px solid #dddddd;
+  border-right: 1px solid #dddddd;
+  padding: 10px;
+}
+.affix {
+  top: 100px;
+}
+#carouselButtons {
+  bottom: 0px;
+  position: absolute;
+  right: 0px;
+}

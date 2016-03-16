@@ -1,0 +1,4 @@
+#dist folder
+dist/
+json-server/
+node_modules/
