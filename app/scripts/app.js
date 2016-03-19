@@ -7,6 +7,9 @@ angular.module('confusionApp', ['ui.router', 'ngResource'])
 $stateProvider.state('app', { // route for the home page
                 url:'/',
                 views: {
+                    'navbar':{
+                      templateUrl: 'views/navbar.html'
+                    },
                     'header': {
                         templateUrl : 'views/header.html'
                     },
@@ -23,6 +26,12 @@ $stateProvider.state('app', { // route for the home page
             .state('app.aboutus', {
                 url:'aboutus',
                 views: {
+                  'navbar@':{
+                    templateUrl: 'views/navbar.html'
+                  },
+                    'header@':{
+                      template: ''
+                    },
                     'content@': {
                         templateUrl: 'views/aboutus.html',
                         controller  : 'AboutController'
@@ -33,6 +42,12 @@ $stateProvider.state('app', { // route for the home page
             .state('app.contactus', {
                 url:'contactus',
                 views: {
+                  'navbar@':{
+                    templateUrl: 'views/navbar.html'
+                  },
+                    'header@':{
+                      template: ''
+                    },
                     'content@': {
                         templateUrl : 'views/contactus.html',
                         controller  : 'ContactController'
@@ -44,6 +59,12 @@ $stateProvider.state('app', { // route for the home page
             .state('app.menu', {
                 url: 'menu',
                 views: {
+                  'navbar@':{
+                    templateUrl: 'views/navbar.html'
+                  },
+                    'header@':{
+                      template: ''
+                    },
                     'content@': {
                         templateUrl : 'views/menu.html',
                         controller  : 'MenuController'
@@ -55,6 +76,12 @@ $stateProvider.state('app', { // route for the home page
             .state('app.dishdetails', {
                 url: 'menu/:id',
                 views: {
+                  'navbar@':{
+                    templateUrl: 'views/navbar.html'
+                  },
+                    'header@':{
+                      template: ''
+                    },
                     'content@': {
                         templateUrl : 'views/dishdetail.html',
                         controller  : 'DishDetailController'
