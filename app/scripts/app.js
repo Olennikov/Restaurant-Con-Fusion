@@ -88,7 +88,7 @@ $stateProvider.state('app', { // route for the home page
                    }
                 }
             });
-
+            
             $urlRouterProvider.otherwise('/');
 
 

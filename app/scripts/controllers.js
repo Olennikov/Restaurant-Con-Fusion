@@ -2,10 +2,10 @@
 
 angular.module('confusionApp')
   .controller('IndexController', ['$scope', 'dataFactory', function($scope, dataFactory) {
-    $scope.showErrorDish = false;
-    $scope.showErrorPromo = false;
-    $scope.showErrorLeader = false;
-    $scope.errorMsg = '';
+    $scope.showErrorDish = true;
+    $scope.showErrorPromo = true;
+    $scope.showErrorLeader = true;
+    $scope.message = 'Loading...';
     // DISHES
     $scope.dish = dataFactory.getDishes().get({
         id: 0
@@ -15,7 +15,7 @@ angular.module('confusionApp')
         $scope.showErrorDish = false;
       },
       function(response) {
-        $scope.errorMsg = 'Error: ' + response.status + ' ' + response.statusText;
+        $scope.message = 'Error: ' + response.status + ' ' + response.statusText;
         $scope.showErrorDish = true;
       });
     // PROMOTIONS
@@ -27,7 +27,7 @@ angular.module('confusionApp')
         $scope.showErrorPromo = false;
       },
       function(response) {
-        $scope.errorMsg = 'Error: ' + response.status + ' ' + response.statusText;
+        $scope.message = 'Error: ' + response.status + ' ' + response.statusText;
         $scope.showErrorPromo = true;
       });
     // LEADERSHIP
@@ -39,21 +39,22 @@ angular.module('confusionApp')
         $scope.showErrorLeader = false;
       },
       function(response) {
-        $scope.errorMsg = 'Error: ' + response.status + ' ' + response.statusText;
+        $scope.message = 'Error: ' + response.status + ' ' + response.statusText;
         $scope.showErrorLeader = true;
       });
   }])
 
 .controller('AboutController', ['$scope', 'dataFactory', function($scope, dataFactory) {
-  $scope.showErrorLeader = false;
-  $scope.errorMsg = '';
+  $scope.showErrorLeader = true;
+  $scope.message = 'Loading...';
   $scope.lead = dataFactory.getLeadership().query(
     function(response) {
       $scope.lead = response;
-      $scope.showErrorLeader = true;
+      $scope.showErrorLeader = false;
     },
     function(response) {
-      $scope.errorMsg = 'Error: ' + response.status + ' ' + response.statusText;
+      $scope.message = 'Error: ' + response.status + ' ' + response.statusText;
+        $scope.showErrorLeader = true;
     }
   );
 }])
